@@ -1,4 +1,4 @@
-# node-cafe24-message [![Build Status](https://travis-ci.com/Akachu/node-cafe24sms.svg?branch=master)](https://travis-ci.com/Akachu/node-cafe24sms) [![Coverage Status](https://coveralls.io/repos/github/Akachu/node-cafe24-message/badge.svg)](https://coveralls.io/github/Akachu/node-cafe24-message)
+# node-cafe24-message [![Build Status](https://travis-ci.com/Akachu/node-cafe24sms.svg?branch=master)](https://travis-ci.com/Akachu/node-cafe24sms) [![Coverage Status](https://coveralls.io/repos/github/Akachu/node-cafe24-message/badge.svg)](https://coveralls.io/github/Akachu/node-cafe24-message) [![NPM version](https://img.shields.io/npm/v/cafe24-message.svg)](https://npmjs.org/package/cafe24-message)
 
 ## Install
 

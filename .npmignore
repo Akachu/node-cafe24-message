@@ -1,0 +1,13 @@
+*.log
+yarn.lock
+.gitiggnore
+.nycrc.json
+.mocharc.json
+.travis.yml
+node_modules/
+test/
+src/
+.nyc_output/
+coverage/
+.github/
+tsconfig.json

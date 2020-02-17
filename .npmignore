@@ -11,3 +11,4 @@ src/
 coverage/
 .github/
 tsconfig.json
+tsconfig.tsbuildinfo

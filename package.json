@@ -1,4 +1,5 @@
 {
+  "name": "cafe24-message",
   "devDependencies": {
     "@types/chai": "^4.2.9",
     "@types/mocha": "^7.0.1",
@@ -20,7 +21,7 @@
   "author": "Akachu <marscop7@gmail.com>",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/Akachu/node-cafe24-message.git"

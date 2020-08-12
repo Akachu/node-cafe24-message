@@ -2,9 +2,7 @@ import { MessageType, MessageConfig, MessageForm } from "./interface";
 import { CAFE24_MESSAGE_API_URL } from "./api";
 
 export function makeMultipartData(data: Record<string, string>) {
-  let boundary = Math.random()
-    .toFixed(12)
-    .substr(2);
+  let boundary = Math.random().toFixed(12).substr(2);
 
   let dataString = "";
 
@@ -25,7 +23,7 @@ export function makeMultipartData(data: Record<string, string>) {
   let contentLength = Buffer.from(dataString).byteLength;
   let multipartHeaders = {
     "Content-Type": contentType,
-    "Content-Length": contentLength.toString()
+    "Content-Length": contentLength.toString(),
   };
 
   return { dataString, multipartHeaders };
@@ -36,7 +34,7 @@ export function makeMessageSendData(
   config: MessageConfig,
   forceMessageType?: MessageType
 ) {
-  const length = Buffer.byteLength(form.body);
+  const length = getTextLength(form.body);
 
   const sphone = config.phone.split("-");
 
@@ -50,7 +48,7 @@ export function makeMessageSendData(
     smsType: "S",
     mode: "1",
     msg: form.body,
-    sms_url: CAFE24_MESSAGE_API_URL
+    sms_url: CAFE24_MESSAGE_API_URL,
   };
 
   if (length > 2000 || (length > 90 && forceMessageType == MessageType.SMS)) {
@@ -68,7 +66,7 @@ export function makeMessageSendData(
       ...data,
       repeatFlag: "Y",
       repeatNum: repeat.count.toString(),
-      repeatTime: repeat.interval.toString()
+      repeatTime: repeat.interval.toString(),
     };
   }
 
@@ -88,7 +86,7 @@ export function makeMessageSendData(
     data = {
       ...data,
       rdate: date,
-      rtime: time
+      rtime: time,
     };
   }
 
@@ -96,6 +94,17 @@ export function makeMessageSendData(
 
   return {
     data,
-    messageType
+    messageType,
   };
+}
+
+function getTextLength(str: string) {
+  var len = 0;
+  for (var i = 0; i < str.length; i++) {
+    if (escape(str.charAt(i)).length === 6) {
+      len++;
+    }
+    len++;
+  }
+  return len;
 }
